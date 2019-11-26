@@ -11,3 +11,5 @@ Init project
 4) creat root graphql schema;
 
 ## Step №3
+1) add mock films data;
+2) tested mock request in graphiql
