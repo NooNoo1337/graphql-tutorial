@@ -17,5 +17,8 @@ Init project
 ## Step №4
 1) Add GraphQl type (Director);
 2) add dependence between types;
-3) 
+
+## Step №5
+1) Add api to get all films;
+1) add api to get all directors;
 
