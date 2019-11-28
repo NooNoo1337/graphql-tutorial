@@ -13,3 +13,5 @@ Init project
 ## Step №3
 1) add mock films data;
 2) tested mock query in graphiql
+
+## Step №4
