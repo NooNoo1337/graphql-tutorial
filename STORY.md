@@ -19,6 +19,7 @@ Init project
 2) add dependence between types;
 
 ## Step №5
-1) Add api to get all films;
+1) Studied GraphQLList type;
+1) add api to get all films;
 1) add api to get all directors;
 
