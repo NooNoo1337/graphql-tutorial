@@ -20,6 +20,8 @@ Init project
 
 ## Step №5
 1) Studied GraphQLList type;
-1) add api to get all films;
-1) add api to get all directors;
+2) add api to get all films;
+3) add api to get all directors;
+
+## Step №6
 
