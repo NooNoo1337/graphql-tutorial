@@ -1,6 +1,6 @@
 const graphql = require('graphql');
 
-const { GraphQLObjectType, GraphQLSchema, GraphQLString, GraphQLID } = graphql;
+const { GraphQLObjectType, GraphQLSchema, GraphQLString, GraphQLID, GraphQLInt } = graphql;
 
 const movies = [
   { id: '1', name: 'Pulp Fiction', genre: 'Crime' },
@@ -9,15 +9,39 @@ const movies = [
   { id: '4', name: 'Snatch', genre: 'Crime-Comedy' },
 ];
 
+const directors = [
+  { id: '1', name: 'Quentin Tarantino', age: 55 },
+  { id: '2', name: 'Michael Radford', age: 72 },
+  { id: '3', name: 'James McTeigue', age: 51 },
+  { id: '4', name: 'Guy Ritchie', age: 50 },
+];
+
+// described GraphQl type
 const MovieType = new GraphQLObjectType({
   name: 'Movie',
   fields: () => ({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
-    genre: { type: GraphQLString }
+    genre: { type: GraphQLString },
+    director: {
+      type: DirectorType ,
+      resolve(parent) {
+        return directors.find(({ id }) => id === parent.id)
+      }
+    }
   })
 });
 
+const DirectorType = new GraphQLObjectType({
+  name: 'Director',
+  fields: () => ({
+    id: { type: GraphQLID },
+    name: { type: GraphQLString },
+    age: { type: GraphQLInt },
+  })
+});
+
+// root query
 const Query = new GraphQLObjectType({
   name: 'Query',
   fields: {
@@ -27,7 +51,7 @@ const Query = new GraphQLObjectType({
       resolve(parent, args) {
         return movies.find(({ id }) => id === args.id)
       }
-    }
+    },
   }
 });
 
