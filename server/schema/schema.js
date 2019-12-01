@@ -9,15 +9,26 @@ const {
   GraphQLList
 } = graphql;
 
+// const movies = [
+//   { "name": "Pulp Fiction", "genre": "Crime", "directorId": "5de0389e1c9d440000c28547" },
+//   { "name": "1984", "genre": "Sci-Fi", "directorId": "5de038be1c9d440000c28549" },
+//   { "name": "V for vendetta", "genre": "Sci-Fi-Triller", "directorId": "5de038d81c9d440000c2854c" },
+//   { "name": "Snatch", "genre": "Crime-Comedy", "directorId": "5de038eb1c9d440000c2854f" },
+//   { "name": "Reservoir Dogs", "genre": "Crime", "directorId": "5de0389e1c9d440000c28547" },
+//   { "name": "The Hateful Eight", "genre": "Crime", "directorId": "5de0389e1c9d440000c28547" },
+//   { "name": "Inglourious Basterds", "genre": "Crime", "directorId": "5de0389e1c9d440000c28547" },
+//   { "name": "Lock, Stock and Two Smoking Barrels", "genre": "Crime-Comedy", "directorId": "5de038eb1c9d440000c2854f" },
+// ];
+
 const movies = [
-  { id: '1', name: 'Pulp Fiction', genre: 'Crime', directorId: '1', },
-  { id: '2', name: '1984', genre: 'Sci-Fi', directorId: '2', },
-  { id: '3', name: 'V for vendetta', genre: 'Sci-Fi-Triller', directorId: '3', },
-  { id: '4', name: 'Snatch', genre: 'Crime-Comedy', directorId: '4', },
-  { id: '5', name: 'Reservoir Dogs', genre: 'Crime', directorId: '1' },
-  { id: '6', name: 'The Hateful Eight', genre: 'Crime', directorId: '1' },
-  { id: '7', name: 'Inglourious Basterds', genre: 'Crime', directorId: '1' },
-  { id: '7', name: 'Lock, Stock and Two Smoking Barrels', genre: 'Crime-Comedy', directorId: '4' },
+  { id: '1', name: "Pulp Fiction", genre: "Crime", directorId: "1" },
+  { id: '2', name: "1984", genre: "Sci-Fi", directorId: "2" },
+  { id: '3', name: "V for vendetta", genre: "Sci-Fi-Triller", directorId: "3" },
+  { id: '4', name: "Snatch", genre: "Crime-Comedy", directorId: "4" },
+  { id: '5', name: "Reservoir Dogs", genre: "Crime", directorId: "1" },
+  { id: '6', name: "The Hateful Eight", genre: "Crime", directorId: "1" },
+  { id: '7', name: "Inglourious Basterds", genre: "Crime", directorId: "1" },
+  { id: '8', name: "Lock, Stock and Two Smoking Barrels", genre: "Crime-Comedy", directorId: "4" },
 ];
 
 const directors = [
