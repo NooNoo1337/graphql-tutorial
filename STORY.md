@@ -24,6 +24,11 @@ Init project
 3) add api to get all directors;
 
 ## Step №6
-1) Create database in mLab;
-2) migrate directors and movies to database.
+1) Create DataBase in mLab;
+2) migrate directors and movies to DataBase.
+
+## Step №7
+1) Connect to DataBase;
+2) add mongoose models (Movies, Directors);
+3) update resolvers.
 
