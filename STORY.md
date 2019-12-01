@@ -24,4 +24,6 @@ Init project
 3) add api to get all directors;
 
 ## Step №6
+1) Create database in mLab;
+2) migrate directors and movies to database.
 
