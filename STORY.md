@@ -51,4 +51,7 @@ Init project
 1) Add new fields (rate, watched) to movie type;
 2) Get data from DB and render it;
 
+## Step №13
+1) Add mutations for creating movies and directors in DB;
+
 
