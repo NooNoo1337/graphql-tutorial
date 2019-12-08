@@ -40,3 +40,7 @@ Init project
 1) Add update and delete methods for movies and directors. All CRUD operations are done;
 2) add nonNull values check;
 
+## Step №10
+1) Add react app structure (add create-react-app env, and all dependencies);
+
+

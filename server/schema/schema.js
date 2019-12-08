@@ -22,8 +22,8 @@ const MovieType = new GraphQLObjectType({
     genre: { type: new GraphQLNonNull(GraphQLString) },
     director: {
       type: DirectorType,
-      resolve(parent) {
-        return Directors.findById(parent.directorId)
+      resolve({ directorId }) {
+        return Directors.findById({ directorId })
       }
     }
   })
