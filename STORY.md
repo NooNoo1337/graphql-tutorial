@@ -36,3 +36,7 @@ Init project
 1) Create Mutation with addDirector, addMovie fields;
 2) add Mutation in root Query;
 
+## Step №9
+1) Add update and delete methods for movies and directors. All CRUD operations are done;
+2) add nonNull values check;
+
