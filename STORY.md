@@ -57,4 +57,7 @@ Init project
 ## Step №14
 1) Add mutations for deleting movies and directors from DB;
 
+## Step №15
+1) Add update mutations for updating movies and directors in DB;
+
 

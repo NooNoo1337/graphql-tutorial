@@ -15,8 +15,6 @@ class DirectorsDialog extends React.Component {
   handleDelete = () => {
     const { id, handleClose, deleteDirector } = this.props;
 
-    console.log('--->', id);
-
     deleteDirector(id);
     handleClose();
   };
