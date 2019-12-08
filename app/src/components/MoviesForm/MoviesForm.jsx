@@ -94,4 +94,4 @@ class MoviesForm extends React.Component {
   }
 };
 
-  export default withHocs(MoviesForm);
+export default withHocs(MoviesForm);

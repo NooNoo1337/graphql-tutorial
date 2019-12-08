@@ -52,6 +52,9 @@ Init project
 2) Get data from DB and render it;
 
 ## Step №13
-1) Add mutations for creating movies and directors in DB;
+1) Add mutations for creating movies and directors from DB;
+
+## Step №14
+1) Add mutations for deleting movies and directors from DB;
 
 
