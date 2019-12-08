@@ -47,4 +47,8 @@ Init project
 1) Add app.use(cors) for cross origin requests;
 2) add movies query;
 
+## Step №12
+1) Add new fields (rate, watched) to movie type;
+2) Get movies and directors from DB and render them;
+
 
