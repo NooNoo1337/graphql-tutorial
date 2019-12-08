@@ -8,12 +8,18 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import BlockIcon from '@material-ui/icons/Block';
 
+import withHocks from './DirectorsDialogHoc';
+
 class DirectorsDialog extends React.Component {
 
   handleDelete = () => {
-    const { id, handleClose } = this.props;
+    const { id, handleClose, deleteDirector } = this.props;
+
+    console.log('--->', id);
+
+    deleteDirector(id);
     handleClose();
-  }
+  };
 
   render() {
     const { open, handleClose } = this.props;
@@ -44,4 +50,4 @@ class DirectorsDialog extends React.Component {
   }
 }
 
-export default DirectorsDialog;
+export default withHocks(DirectorsDialog);
