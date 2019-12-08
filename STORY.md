@@ -43,4 +43,8 @@ Init project
 ## Step №10
 1) Add react app structure (add create-react-app env, and all dependencies);
 
+## Step №11
+1) Add app.use(cors) for cross origin requests;
+2) add movies query;
+
 
