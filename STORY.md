@@ -49,6 +49,6 @@ Init project
 
 ## Step №12
 1) Add new fields (rate, watched) to movie type;
-2) Get movies and directors from DB and render them;
+2) Get data from DB and render it;
 
 
