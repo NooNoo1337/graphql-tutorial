@@ -32,3 +32,7 @@ Init project
 2) add mongoose models (Movies, Directors);
 3) update resolvers.
 
+## Step №8
+1) Create Mutation with addDirector, addMovie fields;
+2) add Mutation in root Query;
+
