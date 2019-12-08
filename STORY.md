@@ -60,4 +60,7 @@ Init project
 ## Step №15
 1) Add update mutations for updating movies and directors in DB;
 
+## Step №16
+1) Add search by name;
+
 
