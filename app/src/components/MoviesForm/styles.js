@@ -1,4 +1,4 @@
-export const styles = theme => ({
+export const styles = (theme) => ({
   container: {
     padding: theme.spacing.unit * 2,
   },
@@ -22,5 +22,5 @@ export const styles = theme => ({
   },
   button: {
     minWidth: 100,
-  }
+  },
 });

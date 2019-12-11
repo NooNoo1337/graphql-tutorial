@@ -8,36 +8,41 @@ import { moviesQuery } from '../MoviesTable/queries';
 
 import { styles } from './styles';
 
-
 const withGraphQL = compose(
   graphql(addMovieMutation, {
     props: ({ mutate }) => ({
-      addMovie: movie => mutate({
-        variables: movie,
-        refetchQueries: [{
-          query: moviesQuery,
-          variables: { name: '' },
-        }],
-      }),
-    })
+      addMovie: (movie) =>
+        mutate({
+          variables: movie,
+          refetchQueries: [
+            {
+              query: moviesQuery,
+              variables: { name: '' },
+            },
+          ],
+        }),
+    }),
   }),
 
   graphql(updateMovieMutation, {
     props: ({ mutate }) => ({
-      updateMovie: movie => mutate({
-        variables: movie,
-        refetchQueries: [{
-          query: moviesQuery,
-          variables: { name: '' },
-        }],
-      }),
-    })
+      updateMovie: (movie) =>
+        mutate({
+          variables: movie,
+          refetchQueries: [
+            {
+              query: moviesQuery,
+              variables: { name: '' },
+            },
+          ],
+        }),
+    }),
   }),
 
   graphql(directorsQuery, {
     options: ({ name = '' }) => ({
       variables: { name },
-    })
+    }),
   })
 );
 

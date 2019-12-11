@@ -1,4 +1,4 @@
-export const styles = theme => ({
+export const styles = (theme) => ({
   container: {
     padding: theme.spacing.unit * 2,
   },
