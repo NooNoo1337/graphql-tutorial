@@ -7,12 +7,12 @@ This is a training project to lear basics of GraphQl.
 - [Material-UI (Application interface)](https://material-ui.com)
 - [Apollo Client](https://www.apollographql.com/docs/react/)
 
-## Setup server
-1) `cd server` - go to server dir;
-2) `yarn` or `npm i` - install all dependencies;
-3) `yarn dev` or `npm run dev` - run the project.
+## Available Scripts
 
-## Setup React app
-1) `cd app` - go to application dir;
-2) `yarn` or `npm i` - install all dependencies;
-3) `yarn start` or `npm run start` - run the project.
+To set up project you can run:
+- `yarn` or `npm i` - install dependencies;
+- `yarn dev:server` or `npm run dev:server` - run server;
+- `yarn dev` or `npm run dev` - run react app.
+
+To build a production version:
+- `yarn build`;

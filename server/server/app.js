@@ -25,12 +25,12 @@ app.use('/graphql', graphqlHTTP({ schema, graphiql: true, pretty: true }));
 
 const dbConnection = mongoose.connection;
 dbConnection.on('error', (error) =>
-  console.log(`Connection to DB is failed: ${error}`)
+  console.log(`[ error ] Connection to DB is failed: ${error}`)
 );
-dbConnection.once('open', () => console.log(`Connected to DB!`));
+dbConnection.once('open', () => console.log(`[ db ] Connected to DB!`));
 
 app.listen(PORT, (error) => {
   error
     ? console.log(error)
-    : console.log(`Server is running http://localhost:${PORT}/`);
+    : console.log(`[ dev ] Server is running http://localhost:${PORT}/`);
 });
