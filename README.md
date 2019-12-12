@@ -3,9 +3,11 @@ This is a training project to lear basics of GraphQl.
 
 ## Stack:
 - [Create React App](https://github.com/facebook/create-react-app)
+- [Typescript](https://www.typescriptlang.org/)
 - [mLab (DataBase)](https://mlab.com)
-- [Material-UI (Application interface)](https://material-ui.com)
+- [GraphQL](https://graphql.org/)
 - [Apollo Client](https://www.apollographql.com/docs/react/)
+- [Material-UI (Application interface)](https://material-ui.com)
 
 ## Available Scripts
 
