@@ -42,8 +42,6 @@ const Directors: FC<Props> = ({ classes }) => {
         ...data,
       });
     }
-
-    console.log('data-->', data);
   };
 
   const onFormClose = () => {
