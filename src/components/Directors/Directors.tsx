@@ -3,6 +3,8 @@ import React, { FC, useState } from 'react';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 
+import { DirectorType } from '../../interfaces/DirectorType';
+
 import DirectorsTable from '../DirectorsTable/DirectorsTable';
 import DirectorsForm from '../DirectorsForm/DirectorsForm';
 
@@ -12,33 +14,24 @@ interface Props {
   classes?: any;
 }
 
-type DirectorsState =
-  | {
-      name: string;
-      age: number;
-      id: null;
-    }
-  | {
-      [x: string]: string | number | boolean | null;
-    };
+const DEFAULT_DIRECTOR_STATE = {
+  id: '',
+  name: '',
+  age: 0,
+};
 
 const Directors: FC<Props> = ({ classes }) => {
-  const DEFAULT_DIRECTORS_STATE = {
-    name: '',
-    age: 0,
-    id: null,
-  };
-  const [directors, setDirectors] = useState<DirectorsState>(
-    DEFAULT_DIRECTORS_STATE
+  const [director, setDirector] = useState<DirectorType>(
+    DEFAULT_DIRECTOR_STATE
   );
 
   const [isFormOpened, setIsFormOpen] = useState<boolean>(false);
 
-  const onFormOpen = (data?: DirectorsState) => {
+  const onFormOpen = (data?: DirectorType) => {
     setIsFormOpen(true);
 
     if (data) {
-      setDirectors({
+      setDirector({
         ...data,
       });
     }
@@ -46,7 +39,7 @@ const Directors: FC<Props> = ({ classes }) => {
 
   const onFormClose = () => {
     setIsFormOpen(false);
-    setDirectors(DEFAULT_DIRECTORS_STATE);
+    setDirector(DEFAULT_DIRECTOR_STATE);
   };
 
   const handleChange = (name: string) => ({
@@ -54,16 +47,14 @@ const Directors: FC<Props> = ({ classes }) => {
   }: {
     target: HTMLInputElement;
   }) => {
-    setDirectors({ ...directors, [name]: target.value });
+    setDirector({ ...director, [name]: target.value });
   };
-
-  const { name, age, id } = directors;
 
   return (
     <>
       <DirectorsForm
         handleChange={handleChange}
-        selectedValue={{ name, age, id }}
+        selectedValue={director}
         open={isFormOpened}
         onFormClose={onFormClose}
       />

@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useMutation } from '@apollo/react-hooks';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -8,23 +9,43 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import BlockIcon from '@material-ui/icons/Block';
 
-import withHocks from './DirectorsDialogHoc';
+import { DIRECTORS_QUERY } from '../DirectorsTable/queries';
+import { DELETE_DIRECTOR_MUTATION } from './mutation';
+
+import { DirectorType } from '../../interfaces/DirectorType';
 
 interface Props {
   isDialogOpened: boolean;
-  id: string;
+  id: string | undefined;
   onDialogClose: () => void;
-  deleteDirector: (id: string) => void;
 }
 
-const DirectorsDialog: FC<Props> = ({
+export const DirectorsDialog: FC<Props> = ({
   isDialogOpened,
   id,
   onDialogClose,
-  deleteDirector,
 }) => {
+  const [deleteDirector] = useMutation(DELETE_DIRECTOR_MUTATION, {
+    update(cache, { data: { deleteDirector: deletedDirector } }) {
+      const { directors }: any = cache.readQuery({
+        query: DIRECTORS_QUERY,
+        variables: { name: '' },
+      });
+
+      cache.writeQuery({
+        query: DIRECTORS_QUERY,
+        data: {
+          directors: directors.filter(
+            (director: DirectorType) => director.id !== deletedDirector.id
+          ),
+        },
+        variables: { name: '' },
+      });
+    },
+  });
+
   const handleDelete = () => {
-    deleteDirector(id);
+    deleteDirector({ variables: { id } });
     onDialogClose();
   };
 
@@ -55,5 +76,3 @@ const DirectorsDialog: FC<Props> = ({
     </Dialog>
   );
 };
-
-export default withHocks(DirectorsDialog);

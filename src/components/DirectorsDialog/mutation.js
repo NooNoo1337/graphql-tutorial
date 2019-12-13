@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost';
 
-export const deleteDirectorMutation = gql`
-  mutation deleteDirector($id: ID) {
+export const DELETE_DIRECTOR_MUTATION = gql`
+  mutation DeleteDirector($id: ID) {
     deleteDirector(id: $id) {
       id
     }
