@@ -1,9 +1,13 @@
 import React, { FC } from 'react';
+import { useMutation } from '@apollo/react-hooks';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import SaveIcon from '@material-ui/icons/Save';
+
+import { DIRECTORS_QUERY } from '../DirectorsTable/queries';
+import { UPDATE_DIRECTOR_MUTATION, ADD_DIRECTOR_MUTATION } from './mutation';
 
 import { DirectorType } from '../../interfaces/DirectorType';
 
@@ -15,8 +19,6 @@ interface Props {
   selectedValue: DirectorType;
   onFormClose: () => void;
   handleChange: (directorName: string) => any;
-  addDirector: (director: DirectorType) => void;
-  updateDirector: (director: DirectorType) => void;
 }
 
 const DirectorsForm: FC<Props> = ({
@@ -25,14 +27,18 @@ const DirectorsForm: FC<Props> = ({
   selectedValue: { id, name, age },
   onFormClose,
   handleChange,
-  addDirector,
-  updateDirector,
 }) => {
+  const [updateDirector] = useMutation(UPDATE_DIRECTOR_MUTATION);
+
+  const [addDirector] = useMutation(ADD_DIRECTOR_MUTATION, {
+    refetchQueries: [{ query: DIRECTORS_QUERY, variables: { name: '' } }],
+  });
+
   const handleSave = () => {
     if (id) {
-      updateDirector({ id, name, age: Number(age) });
+      updateDirector({ variables: { id, name, age: Number(age) } });
     } else {
-      addDirector({ name, age: Number(age) });
+      addDirector({ variables: { name, age: Number(age) } });
     }
 
     onFormClose();

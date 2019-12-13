@@ -7,15 +7,15 @@ import withHocs from './DirectorsSearchHoc';
 interface Props {
   classes?: any;
   name: string;
-  handleChange: (directorName: string) => any;
-  handleSearch: (evt: SyntheticEvent) => void;
+  onInputChange: (directorName: string) => any;
+  onSearch: (evt: SyntheticEvent) => void;
 }
 
 const DirectorsSearch: FC<Props> = ({
   classes,
   name,
-  handleChange,
-  handleSearch,
+  onInputChange,
+  onSearch,
 }) => {
   return (
     <div className={classes.search}>
@@ -23,8 +23,8 @@ const DirectorsSearch: FC<Props> = ({
         <SearchIcon />
       </div>
       <InputBase
-        onChange={handleChange('name')}
-        onKeyPress={(evt) => handleSearch(evt)}
+        onChange={onInputChange('name')}
+        onKeyPress={(evt) => onSearch(evt)}
         name={name}
         placeholder="Search…"
         classes={{
